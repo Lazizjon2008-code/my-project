@@ -44,7 +44,7 @@ function About() {
 
     <section>
       <div className="container">
-        <div>
+        <div className='blog'>
 
           <div className='planning'>
             <img src="src/images/planning_work.svg" alt="" />
@@ -69,7 +69,29 @@ function About() {
             <form action="">
               <input type="search" id='search' required />
             </form>
+            <div className='informations_in _categories'>
             <h3>Categories</h3>
+              <div className='all_things'>
+                <p>Crafts</p>
+                <p>2</p>
+              </div >
+              <div className='all_things'>
+                <p>Design</p>
+                <p>8</p>
+              </div>
+              <div className='all_things'>
+                <p>Handmade</p>
+                <p>7</p>
+              </div>
+              <div className='all_things'>
+                <p>Interior</p>
+                <p>1</p>
+              </div>
+              <div className='all_things'>
+                <p>Wood</p>
+                <p>6</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

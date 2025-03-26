@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    width: 1440px;
+    margin: 0 auto;
+  }
+  
+  .navbar {
+    padding: 7px 7px;
+  }
+  
+  .headers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo_header {
+    width: 185px;
+    height: 41px;
+    margin-left: 25px;
+  }
+  
+  .connect_pages ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+  }
+  
+  .connect_pages ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #000000;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .connect_pages ul li a:hover {
+    color: rgb(0, 0, 197);
+  }
+  
+  .btns_of_header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-right: 60px;
+  }
+  
+  .btns_of_header button{
+    border: none;
+    background-color: white;
+  }
+  
+  .btns_of_header button img {
+    width: 28px;
+    height: 38px;
+  }
+
+.hero_of_section {
+  background: url('src/images/shop_back.svg') no-repeat center center/cover;
+  height: 316px;
+  width: 1440px;
+}
+
+.title_of_hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+.title_of_hero h5 {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 3px;
+}

@@ -1,4 +1,9 @@
 import './Home.css'
+import './main.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from './Navbar';
+import Shop from './Shop';
+import About from './About';
 
 function App() {
 
@@ -9,17 +14,19 @@ function App() {
       <div className="container">
         <nav className='navbar'>
           <div className='headers'>
-            <div className='logo'>
+            <div className='logo_header'>
               <img src="src/images/Logo.svg" alt="" />
             </div>
 
             <div className='connect_pages'>
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<Navbar />} />
+                  <Route path="/shop" element={<Shop />} />
+                  <Route path="/about" element={<About />} />
+                  {/* <Route path="/contact" element={<Contact />} /> */}
+                </Routes>
+              </BrowserRouter>
             </div>
 
             <div className='btns_of_header'>
@@ -185,7 +192,8 @@ function App() {
     </section>
 
     <section>
-      <div className='shares'>
+      <div className="container">
+              <div className='shares'>
           <h5>Share your setup with</h5>
           <h2>#FuniroFurniture</h2>
       </div>
@@ -217,6 +225,7 @@ function App() {
             <img src="src/images/wall.svg" alt="" />
           </div>
         </div>
+      </div>
       </div>
     </section>
 

@@ -25,24 +25,10 @@
     margin-left: 25px;
   }
   
-  .connect_pages ul{
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    list-style: none;
-  }
-  
-  .connect_pages ul li a {
-    text-decoration: none;
-    font-size: 16px;
-    color: #000000;
-    transition: all 0.1s ease-in-out;
-  }
-  
-  .connect_pages ul li a:hover {
-    color: rgb(0, 0, 197);
-  }
-  
+.nav {
+  gap: 50px;
+}
+
   .btns_of_header {
     display: flex;
     align-items: center;

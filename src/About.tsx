@@ -54,11 +54,11 @@ function About() {
                 <img src="src/images/people.svg" alt="" />
                 <p>Admin</p>
               </div>
-              <div className='Data'>
+              <div className='person'>
                 <img src="src/images/data.svg" alt="" />
                 <p>14 Oct 2022</p>
               </div>
-              <div className='Wood'>
+              <div className='person'>
                 <img src="src/images/wood.svg" alt="" />
                 <p>Wood</p>
               </div>
@@ -68,8 +68,9 @@ function About() {
           <div className='categories'>
             <form action="">
               <input type="search" id='search' required />
+              <button><img src="src/images/searching.svg" alt="" /></button>
             </form>
-            <div className='informations_in _categories'>
+            <div className='informations_in_categories'>
             <h3>Categories</h3>
               <div className='all_things'>
                 <p>Crafts</p>
@@ -90,6 +91,33 @@ function About() {
               <div className='all_things'>
                 <p>Wood</p>
                 <p>6</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div className="container">
+        <div>
+          <div>
+            <h1>Going all-in with millennial design</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et <br /> dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin <br /> aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis <br /> in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit <br /> ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.</p>
+            <button>Read more</button>
+            <img src="src/images/hand.svg" alt="" />
+            <div className='about_plan'>
+              <div className='person'>
+                <img src="src/images/people.svg" alt="" />
+                <p>Admin</p>
+              </div>
+              <div className='person'>
+                <img src="src/images/data.svg" alt="" />
+                <p>14 Oct 2022</p>
+              </div>
+              <div className='person'>
+                <img src="src/images/wood.svg" alt="" />
+                <p>Wood</p>
               </div>
             </div>
           </div>

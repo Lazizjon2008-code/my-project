@@ -183,8 +183,7 @@ function Shop() {
     </section>
 
     <section>
-        <div className="container">
-            <div className='about_shop'>
+    <div className='about_shop'>
                 <div className='quality'>
                     <img src="src/images/trophy.svg" alt="" />
                     <div>
@@ -214,7 +213,6 @@ function Shop() {
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <footer className="footer">

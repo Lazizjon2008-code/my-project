@@ -201,8 +201,7 @@ function About() {
     </section>
 
     <section>
-        <div className="container">
-            <div className='about_shop'>
+    <div className='about_shop'>
                 <div className='quality'>
                     <img src="src/images/trophy.svg" alt="" />
                     <div>
@@ -232,7 +231,6 @@ function About() {
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <footer className="footer">

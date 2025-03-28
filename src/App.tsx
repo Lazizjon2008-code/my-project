@@ -3,6 +3,7 @@ import './main.css'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import Shop from './Shop';
 import About from './About';
+import Contact from './Contact';
 
 
 function Navigation() {
@@ -13,7 +14,7 @@ function Navigation() {
       <Link to="/" style={{textDecoration: 'none'}} >Home</Link>
       <Link to="/shop" style={{ marginLeft: '60px', textDecoration: 'none' }}>Shop</Link>
       <Link to="/blog" style={{ marginLeft: '60px', textDecoration: 'none' }}>About</Link>
-      <Link to="/shop" style={{ marginLeft: '60px', textDecoration: 'none' }}>Contact</Link>
+      <Link to="/contact" style={{ marginLeft: '60px', textDecoration: 'none' }}>Contact</Link>
     </nav>
   ) : null;
 }
@@ -24,7 +25,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/blog" element={<About />} />
-
+        <Route path="/contact" element={<Contact />}/>
       </Routes>
     </Router>
   );

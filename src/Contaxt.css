@@ -170,6 +170,7 @@
 }
 
 .informations {
+    margin-top: 60px;
     display: flex;
     align-items: start;
     justify-content: space-around;

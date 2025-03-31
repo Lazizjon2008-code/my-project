@@ -294,6 +294,41 @@ function MainPage() {
         <p>2023 funiro. All rights reserved</p>
       </div>
     </footer>
+
+    <section className='cart_section'>
+      <div className='shopping'>
+        <div className='shop_cart'>
+          <div className='title_of_shop'>
+          <h2>Shopping Cart</h2>
+          <button><img src="src/images/block.svg" alt="" /></button>
+          </div>
+
+          <div className='get_things'>
+            <img className='sofa' src="src/images/sofa.svg" alt="" />
+            <div>
+              <h5>Asgaard sofa</h5>
+              <div style={{display: 'flex', alignItems: 'center', marginTop: '5px', gap: '8px'}}>
+                <h5>1</h5>
+                <p>X</p>
+                <h6>Rs. 250,000.00</h6>
+              </div>
+            </div>
+            <button><img src="src/images/btn_x.svg" alt="" /></button>
+          </div>
+
+          <div className='subototal'>
+            <h4>Subtotal</h4>
+            <h6>Rs. 520,000.00</h6>
+          </div>
+
+          <div className='cart_btns'>
+            <button className='cart'>Cart</button>
+            <button className='checkout'>Checkout</button>
+            <button className='comparison'>Comparison</button>
+          </div>
+        </div>
+      </div>
+    </section>
     </>
   )
 }

@@ -1,23 +1,50 @@
 import './Shop.css'
+import { Link, useLocation } from "react-router-dom";
+
+
+function Logo() {
+  const location = useLocation();
+
+  return location.pathname !== "/ " ? (
+    <nav className="nav">
+      <Link to="/"  ><img src="src/images/Logo.svg" alt="" /></Link>
+    </nav>
+  ) : null;
+}
+
+function Navigation() {
+  const location = useLocation();
+
+  return location.pathname !== "/shop" ? (
+      <nav className="nav">
+          <Link to="/" >Home</Link>
+          <Link to="/shop" style={{ marginLeft: '60px' }}>Shop</Link>
+          <Link to="/blog" style={{ marginLeft: '60px' }}>About</Link>
+          <Link to="/contact" style={{ marginLeft: '60px' }}>Contact</Link>
+      </nav>
+  ) : null;
+}
+
 
 function Shop() {
     return (
-        <>
+    <>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></link>
     <header>
+    <Navigation />
       <div className="container">
         <nav className='navbar'>
           <div className='headers'>
             <div className='logo'>
-              <img src="src/images/Logo.svg" alt="" />
+            <Logo />
             </div>
 
             <div className='connect_pages'>
               <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/shop">Shop</Link></li>
+                <li><Link to="/blog">About</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
 

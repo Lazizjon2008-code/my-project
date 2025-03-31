@@ -4,6 +4,19 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react
 import Shop from './Shop';
 import About from './About';
 import Contact from './Contact';
+import Syltherine from './Syltherine';
+
+
+
+function Logo() {
+  const location = useLocation();
+
+  return location.pathname !== "/ " ? (
+    <nav className="nav">
+      <Link to="/"  ><img src="src/images/Logo.svg" alt="" /></Link>
+    </nav>
+  ) : null;
+}
 
 
 function Navigation() {
@@ -22,10 +35,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/blog" element={<About />} />
         <Route path="/contact" element={<Contact />}/>
+        <Route path="/Syltherine" element={<Syltherine />}/>
       </Routes>
     </Router>
   );
@@ -33,7 +47,7 @@ function App() {
 
 
 
-function MainPage() {
+function HomePage() {
 
   return (
     <>
@@ -43,7 +57,7 @@ function MainPage() {
         <nav className='navbar'>
           <div className='headers'>
             <div className='logo_header'>
-              <img src="src/images/Logo.svg" alt="" />
+              <Logo />
             </div>
 
             <div className='connect_pages'>
@@ -106,63 +120,111 @@ function MainPage() {
           <div className='Products_to_sell'>
             <div className='products'>
               <div className='about_Syltherine'>
+                <div className="product-card">
                 <img src="src/images/Syltherine.svg" alt="" />
+                <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Syltherine</h4>
                 <p>Stylish cafe chair</p>
                 <div className='prices'>
                   <h5>Rp 2.500.000</h5>
                   <p>Rp 3.500.000</p>
                 </div>
+                </div>
               </div>
               <div className='about_Leviosa'>
+                <div className="product-card">
                 <img src="src/images/Syltherine.svg" alt="" />
+                  <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Leviosa</h4>
                 <p>Stylish cafe chair</p>
                 <h5>Rp 2.500.000</h5>
+                </div>
               </div>
               <div className='about_Lolito'>
+                <div className="product-card">
                 <img src="src/images/lolito.svg" alt="" />
+                <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Lolito</h4>
                 <p>Luxury big sofa</p>
                 <div className='prices'>
                   <h5>Rp 7.000.000</h5>
                   <p>Rp 14.000.000</p>
                 </div>
+                </div>
               </div>
               <div className='about_Respira'>
+                <div className="product-card">
                 <img src="src/images/respira.svg" alt="" />
+                  <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Respira</h4>
                 <p>Outdoor bar table and stool</p>
                 <h5>Rp 500.000</h5>
+                </div>
               </div>
             </div>
             <div className='another_products'>
               <div className='about_grifo'>
+                <div className='product-card'>
                 <img src="src/images/grifo.svg" alt="" />
+                  <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Grifo</h4>
                 <p>Night lamp</p>
                 <h5>Rp 1.500.000</h5>
+                </div>
               </div>
               <div className='about_grifo'>
+                <div className='product-card'>
                 <img src="src/images/muggo.svg" alt="" />
+                  <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Muggo</h4>
                 <p>Small mug</p>
                 <h5>Rp 150.000</h5>
+                </div>
               </div>
               <div className='about_Syltherine'>
+                <div className="product-card">
                 <img src="src/images/pinckgy.svg" alt="" />
+                  <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Pingky</h4>
                 <p>Cute bed set</p>
                 <div className='prices'>
                   <h5>Rp 7.000.000</h5>
                   <p>Rp 14.000.000</p>
                 </div>
+                </div>
               </div>
               <div className='about_grifo'>
+                <div className="product-card">
                 <img src="src/images/potty.svg" alt="" />
+                  <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="src/images/link.svg" alt="" />
+                  </div>
                 <h4>Potty</h4>
                 <p>Minimalist flower pot</p>
                 <h5>Rp 500.000</h5>
+                </div>
               </div>
             </div>
 
@@ -214,8 +276,8 @@ function MainPage() {
 
     <section>
       <div className="container">
-              <div className='shares'>
-          <h5>Share your setup with</h5>
+          <div className='shares'>
+          <h5>link your setup with</h5>
           <h2>#FuniroFurniture</h2>
       </div>
 
@@ -295,7 +357,7 @@ function MainPage() {
       </div>
     </footer>
 
-    <section className='cart_section'>
+    {/* <section className='cart_section'>
       <div className='shopping'>
         <div className='shop_cart'>
           <div className='title_of_shop'>
@@ -328,7 +390,7 @@ function MainPage() {
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
     </>
   )
 }

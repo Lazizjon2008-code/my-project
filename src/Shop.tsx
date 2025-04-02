@@ -71,132 +71,172 @@ function Shop() {
     <section>
         <div className="container">
             <div className='purchase_smth'>
-                <div className='products'>
-                    <div className='about_Syltherine'>
-                        <img src="src/images/Syltherine.svg" alt="" />
-                        <h4>Syltherine</h4>
-                        <p>Stylish cafe chair</p>
-                        <div className='prices'>
-                        <h5>Rp 2.500.000</h5>
-                        <p>Rp 3.500.000</p>
-                        </div>
-                    </div>
-                    <div className='about_Leviosa'>
-                        <img src="src/images/Syltherine.svg" alt="" />
-                        <h4>Leviosa</h4>
-                        <p>Stylish cafe chair</p>
-                        <h5>Rp 2.500.000</h5>
-                    </div>
-                    <div className='about_Lolito'>
-                        <img src="src/images/lolito.svg" alt="" />
-                        <h4>Lolito</h4>
-                        <p>Luxury big sofa</p>
-                        <div className='prices'>
-                        <h5>Rp 7.000.000</h5>
-                        <p>Rp 14.000.000</p>
-                        </div>
-                    </div>
-                    <div className='about_Respira'>
-                        <img src="src/images/respira.svg" alt="" />
-                        <h4>Respira</h4>
-                        <p>Outdoor bar table and stool</p>
-                        <h5>Rp 500.000</h5>
-                    </div>
-                </div>
-                <div className='products'>
-                    <div className='about_Syltherine'>
-                    <img src="src/images/Syltherine.svg" alt="" />
-                    <h4>Syltherine</h4>
-                    <p>Stylish cafe chair</p>
-                    <div className='prices'>
-                    <h5>Rp 2.500.000</h5>
-                    <p>Rp 3.500.000</p>
-                    </div>
-                </div>
-                <div className='about_Leviosa'>
-                    <img src="src/images/Syltherine.svg" alt="" />
-                    <h4>Leviosa</h4>
-                    <p>Stylish cafe chair</p>
-                    <h5>Rp 2.500.000</h5>
-                </div>
-                <div className='about_Lolito'>
-                    <img src="src/images/lolito.svg" alt="" />
-                    <h4>Lolito</h4>
-                    <p>Luxury big sofa</p>
-                    <div className='prices'>
-                    <h5>Rp 7.000.000</h5>
-                    <p>Rp 14.000.000</p>
-                    </div>
-                </div>
-                <div className='about_Respira'>
-                    <img src="src/images/respira.svg" alt="" />
-                    <h4>Respira</h4>
-                    <p>Outdoor bar table and stool</p>
-                    <h5>Rp 500.000</h5>
-                </div>
-            </div>
             <div className='products'>
               <div className='about_Syltherine'>
+                <div className="product-card">
                 <img src="src/images/Syltherine.svg" alt="" />
+                <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Syltherine</h4>
                 <p>Stylish cafe chair</p>
                 <div className='prices'>
                   <h5>Rp 2.500.000</h5>
                   <p>Rp 3.500.000</p>
                 </div>
+                </div>
               </div>
               <div className='about_Leviosa'>
-                <img src="src/images/Syltherine.svg" alt="" />
+                <div className="product-card">
+                <img src="src/images/Leviosa.svg" alt="" />
+                  <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Leviosa</h4>
                 <p>Stylish cafe chair</p>
                 <h5>Rp 2.500.000</h5>
+                </div>
               </div>
               <div className='about_Lolito'>
+                <div className="product-card">
                 <img src="src/images/lolito.svg" alt="" />
+                <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Lolito</h4>
                 <p>Luxury big sofa</p>
                 <div className='prices'>
                   <h5>Rp 7.000.000</h5>
                   <p>Rp 14.000.000</p>
                 </div>
+                </div>
               </div>
               <div className='about_Respira'>
+                <div className="product-card">
                 <img src="src/images/respira.svg" alt="" />
+                  <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Respira</h4>
                 <p>Outdoor bar table and stool</p>
                 <h5>Rp 500.000</h5>
+                </div>
               </div>
             </div>
             <div className='products'>
               <div className='about_Syltherine'>
+                <div className="product-card">
                 <img src="src/images/Syltherine.svg" alt="" />
+                <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Syltherine</h4>
                 <p>Stylish cafe chair</p>
                 <div className='prices'>
                   <h5>Rp 2.500.000</h5>
                   <p>Rp 3.500.000</p>
                 </div>
+                </div>
               </div>
               <div className='about_Leviosa'>
-                <img src="src/images/Syltherine.svg" alt="" />
+                <div className="product-card">
+                <img src="src/images/Leviosa.svg" alt="" />
+                  <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Leviosa</h4>
                 <p>Stylish cafe chair</p>
                 <h5>Rp 2.500.000</h5>
+                </div>
               </div>
               <div className='about_Lolito'>
+                <div className="product-card">
                 <img src="src/images/lolito.svg" alt="" />
+                <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Lolito</h4>
                 <p>Luxury big sofa</p>
                 <div className='prices'>
                   <h5>Rp 7.000.000</h5>
                   <p>Rp 14.000.000</p>
                 </div>
+                </div>
               </div>
               <div className='about_Respira'>
+                <div className="product-card">
                 <img src="src/images/respira.svg" alt="" />
+                  <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
                 <h4>Respira</h4>
                 <p>Outdoor bar table and stool</p>
                 <h5>Rp 500.000</h5>
+                </div>
+              </div>
+            </div>
+            <div className='products'>
+              <div className='about_Syltherine'>
+                <div className="product-card">
+                <img src="src/images/Syltherine.svg" alt="" />
+                <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
+                <h4>Syltherine</h4>
+                <p>Stylish cafe chair</p>
+                <div className='prices'>
+                  <h5>Rp 2.500.000</h5>
+                  <p>Rp 3.500.000</p>
+                </div>
+                </div>
+              </div>
+              <div className='about_Leviosa'>
+                <div className="product-card">
+                <img src="src/images/Leviosa.svg" alt="" />
+                  <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
+                <h4>Leviosa</h4>
+                <p>Stylish cafe chair</p>
+                <h5>Rp 2.500.000</h5>
+                </div>
+              </div>
+              <div className='about_Lolito'>
+                <div className="product-card">
+                <img src="src/images/lolito.svg" alt="" />
+                <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
+                <h4>Lolito</h4>
+                <p>Luxury big sofa</p>
+                <div className='prices'>
+                  <h5>Rp 7.000.000</h5>
+                  <p>Rp 14.000.000</p>
+                </div>
+                </div>
+              </div>
+              <div className='about_Respira'>
+                <div className="product-card">
+                <img src="src/images/respira.svg" alt="" />
+                  <div className="overlay">
+                    <button>Add to cart</button>
+                    <img src="/src/images/link.svg" alt="" />
+                  </div>
+                <h4>Respira</h4>
+                <p>Outdoor bar table and stool</p>
+                <h5>Rp 500.000</h5>
+                </div>
               </div>
             </div>
             </div>

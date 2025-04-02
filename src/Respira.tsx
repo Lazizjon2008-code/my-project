@@ -16,7 +16,7 @@ function Logo() {
 function Navigation() {
   const location = useLocation();
 
-  return location.pathname !== "/syltherine" ? (
+  return location.pathname !== "/respira" ? (
       <nav className="nav">
           <Link to="/" >Home</Link>
           <Link to="/shop" style={{ marginLeft: '60px' }}>Shop</Link>
@@ -27,7 +27,7 @@ function Navigation() {
 }
 
 
-function Syltherine() {
+function Respira() {
 
   const [cartOpen, setCartOpen] = useState(false);
   const [count, setCount] = useState(1);
@@ -87,7 +87,7 @@ function Syltherine() {
             <img src="src/images/home-arrow.svg" alt="" />
             <img src="src/images/shop-arrow.svg" alt="" />
             <img src="src/images/line.svg" alt="" />
-            <h4>Syltherine</h4>
+            <h4>Leviosa</h4>
           </div>
       </div>
     </div>
@@ -97,17 +97,17 @@ function Syltherine() {
       <div className="product-content">
         <div className="product-gallery">
         <div className="thumbnail-list">
-            <img src="src/images/Syltherine.svg" alt="Thumbnail 1" />
-            <img src="src/images/Syltherine.svg" alt="Thumbnail 2" />
-            <img src="src/images/Syltherine.svg" alt="Thumbnail 3" />
-            <img src="src/images/Syltherine.svg" alt="Thumbnail 4" />
+            <img src="src/images/respira.svg" alt="Thumbnail 1" />
+            <img src="src/images/respira.svg" alt="Thumbnail 2" />
+            <img src="src/images/respira.svg" alt="Thumbnail 3" />
+            <img src="src/images/respira.svg" alt="Thumbnail 4" />
           </div>
-          <img src="src/images/Syltherine.svg" alt="Asgaard Sofa" className="main-image" />
+          <img src="src/images/respira.svg" alt="Asgaard Sofa" className="main-image" />
         </div>
         
         <div className="product-info">
-          <h1>Syltherine</h1>
-          <p className="price">Rp 2.500.000</p>
+          <h1>Respira</h1>
+          <p className="price">Rp 500.000</p>
           <p className="rating">⭐⭐⭐⭐⭐ (5 Customer Reviews)</p>
           <p className="description">
           Setting the bar as one of the loudest speakers in its class, the <br /> Kilburn is a compact, stout-hearted hero with a well-balanced <br /> audio which boasts a clear midrange and extended highs for a sound.
@@ -156,8 +156,8 @@ function Syltherine() {
     <section>
       <div className="container">
         <div className="images">
-          <img src="src/images/Syltherine.svg" alt="" />
-          <img src="src/images/Syltherine.svg" alt="" />
+          <img src="src/images/respira.svg" alt="" />
+          <img src="src/images/respira.svg" alt="" />
         </div>
       </div>
     </section>
@@ -168,14 +168,14 @@ function Syltherine() {
           <h1>Related Products</h1>
 
           <div className='products'>
-              <div className='about_Syltherine'>
+              <div className='about_Leviosa'>
                 <div className="product-card">
                 <img src="src/images/Syltherine.svg" alt="" />
                 <div className="overlay">
                     <button>Add to cart</button>
                     <img src="/src/images/link.svg" alt="" />
                   </div>
-                <h4>Syltherine</h4>
+                <h4>Leviosa</h4>
                 <p>Stylish cafe chair</p>
                 <div className='prices'>
                   <h5>Rp 2.500.000</h5>
@@ -277,4 +277,4 @@ function Syltherine() {
     )
 } 
 
-export default Syltherine
+export default Respira

@@ -5,7 +5,13 @@ import Shop from './Shop';
 import About from './About';
 import Contact from './Contact';
 import Syltherine from './Syltherine';
-
+import Leviosa from './Leviosa';
+import Lolito from './Lolito';
+import Respira from './Respira';
+import Grifo from './Grifo';
+import Muggo from './Muggo';
+import Pingky from './Pingky';
+import Potty from './Potty';
 
 
 
@@ -41,6 +47,13 @@ function App() {
         <Route path="/blog" element={<About />} />
         <Route path="/contact" element={<Contact />}/>
         <Route path="/Syltherine" element={<Syltherine />}/>
+        <Route path="/Leviosa" element={<Leviosa />}/>
+        <Route path="/Lolito" element={<Lolito />}/>
+        <Route path="/Respira" element={<Respira/>}/>
+        <Route path="/Grifo" element={<Grifo />}/>
+        <Route path="/" element={<Muggo />}/>
+        <Route path="/Pingky" element={<Pingky />}/>
+        <Route path="/Potty" element={<Potty />}/>
       </Routes>
     </Router>
   );
@@ -75,6 +88,45 @@ function HomePage() {
         </nav>
       </div>
     </header>
+
+    {/* <div className={`cart ${cartOpen ? "open" : ""}`}>
+        <button className="close-btn" onClick={() => setCartOpen(false)}><img src="/images/x.svg" alt="" /></button>
+        <h2>Shopping Cart</h2>
+
+        <div className="cart-items">
+          {cartItems.length === 0 ? (
+            <p>Your cart is empty</p>
+          ) : (
+            <>
+              {cartItems.map((item, index) => (
+                <div key={`${item.id}-${index}`} className="cart-item">
+                  <img src={item.image} alt={item.name} className="cart-item-image" />
+                  <div className="cart-item-details">
+                    <h4>{item.name}</h4>
+                    <p>{item.price}</p>
+                  </div>
+                  <button onClick={() => removeFromCart(index)} className="remove-item">
+                    <img src="/images/x.svg" alt="Remove" />
+                  </button>
+                </div>
+              ))}
+            </>
+          )}
+        </div>
+
+        <div className="sub">
+          <div className="text">
+            <p>Subtotal: Rp {calculateTotal(cartItems)}</p>
+          </div><br />
+          <div className="bt">
+            <button>Cart</button>
+            <Link to="/Checkout"  >
+              <button>Checkout</button></Link>
+            <button>Comparison</button>
+          </div>
+        </div>
+      </div>
+ */}
 
     <section className='hero_of_page'>
       <div className="container">
@@ -357,41 +409,6 @@ function HomePage() {
         <p>2023 funiro. All rights reserved</p>
       </div>
     </footer>
-
-    {/* <section className='cart_section'>
-      <div className='shopping'>
-        <div className='shop_cart'>
-          <div className='title_of_shop'>
-          <h2>Shopping Cart</h2>
-          <button><img src="src/images/block.svg" alt="" /></button>
-          </div>
-
-          <div className='get_things'>
-            <img className='sofa' src="src/images/sofa.svg" alt="" />
-            <div>
-              <h5>Asgaard sofa</h5>
-              <div style={{display: 'flex', alignItems: 'center', marginTop: '5px', gap: '8px'}}>
-                <h5>1</h5>
-                <p>X</p>
-                <h6>Rs. 250,000.00</h6>
-              </div>
-            </div>
-            <button><img src="src/images/btn_x.svg" alt="" /></button>
-          </div>
-
-          <div className='subototal'>
-            <h4>Subtotal</h4>
-            <h6>Rs. 520,000.00</h6>
-          </div>
-
-          <div className='cart_btns'>
-            <button className='cart'>Cart</button>
-            <button className='checkout'>Checkout</button>
-            <button className='comparison'>Comparison</button>
-          </div>
-        </div>
-      </div>
-    </section> */}
     </>
   )
 }

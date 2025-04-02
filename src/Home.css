@@ -627,131 +627,137 @@
     justify-content: center;
   }
 
-  /* .cart_section {
-    display: none;
+  .cart.open {
+    right: 0;
   }
   
-
-.shopping {
-  width: 417px;
-  height: 700px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-}  
-
-.shop_cart {
-  padding-top: 20px;
-  width: 350px;
-}  
-
-.title_of_shop {
-  display: flex;
-  align-items: center;  
-  justify-content: space-between;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #D9D9D9;
-}
-
-.title_of_shop h2 {
-  margin-left: 20px;
-  font-size: 24px;
-  color: #000000;
-}
-
-.title_of_shop button {
-  border: none;
-  width: 16.625px;
-  height: 19px;
-}
-
-.get_things {
-  margin-top: 30px;
-  height: 105px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.sofa {
-  width: 108px;
-  height: 105px;
-}
-
-.get_things h5 {
-  font-size: 16px;
-  color: #000000;
-}
-
-.get_things p {
-  font-size: 12px;
-  color: #000000;
-}
-
-.get_things h6 {
-  font-size: 12px;
-  color: #B88E2F;
-}
-
-.get_things button {
-  border: none;
-  width: 20px;
-  height: 20px;
-}
-
-.subototal {
-  padding-bottom: 20px;
-  margin-top: 120px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #D9D9D9;
-}
-
-.subototal h4 {
-  font-size: 16px;
-  color: #000000;
-}
-
-.subototal h6 {
-  font-size: 12px;
-  color: #B88E2F;
-  margin-left: 100px;
-}
-
-.cart_btns {
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.cart {
-  width: 87px;
-  height: 30px;
-  border: 1px solid #000000;
-  background-color: white;
-  border-radius: 50px;
-  color: #000000;
-  font-size: 12px;
-}
-
-.checkout {
-  width: 118px;
-  height: 30px;
-  border: 1px solid #000000;
-  background-color: white;
-  border-radius: 50px;
-  color: #000000;
-  font-size: 12px;
-}
-
-.comparison {
-  width: 135px;
-  height: 30px;
-  border: 1px solid #000000;
-  background-color: white;
-  border-radius: 50px;
-  color: #000000;
-  font-size: 12px;
-} */
+  /* Кнопка закрытия */
+  .close-btn {
+    position: absolute;
+    top: 35px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sub p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+  
+  .text {
+    width: 417px;
+    border-bottom: 1px solid #D9D9D9;
+    padding-bottom: 20px;
+    margin-top: -00px;
+  }
+  
+  .bt button {
+    border: 1px solid #000000;
+    border-radius: 50px;
+    color: black;
+    background-color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .bt button:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .bt {
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: -190px; */
+  
+  }
+  
+  .sub {
+    position: sticky;
+    margin-top: 160px;
+  }
+  
+  
+  
+  .cart-count {
+  
+    font-weight: 600;
+    color: red;
+  
+  }
+  
+  .cart-items {
+    max-height: 375px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .cart-item-image {
+    width: 108px;
+    height: 108px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .cart-item-details {
+    flex-grow: 1;
+  }
+  
+  .cart-item-details h4 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+  
+  .cart-item-details p {
+    margin: 5px 0 0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #B88E2F;
+  }
+  
+  .remove-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .remove-item img {
+    width: 12px;
+    height: 12px;
+    opacity: 0.5;
+  }
+  
+  .remove-item:hover img {
+    opacity: 1;
+  }
+  
+  .container {
+    overflow-x: hidden;
+  }
+  

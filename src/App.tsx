@@ -8,6 +8,7 @@ import Syltherine from './Syltherine';
 
 
 
+
 function Logo() {
   const location = useLocation();
 
@@ -136,7 +137,7 @@ function HomePage() {
               </div>
               <div className='about_Leviosa'>
                 <div className="product-card">
-                <img src="src/images/Syltherine.svg" alt="" />
+                <img src="src/images/Leviosa.svg" alt="" />
                   <div className="overlay">
                     <button>Add to cart</button>
                     <img src="/src/images/link.svg" alt="" />

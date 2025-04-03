@@ -16,7 +16,7 @@ function Logo() {
 function Navigation() {
   const location = useLocation();
 
-  return location.pathname !== "/syltherine" ? (
+  return location.pathname !== "/Syltherine" ? (
       <nav className="nav">
           <Link to="/" >Home</Link>
           <Link to="/shop" style={{ marginLeft: '60px' }}>Shop</Link>
@@ -57,40 +57,49 @@ function Syltherine() {
               <button><img src="src/images/blog.svg" alt="" /></button>
               <button><img src="src/images/search.svg" alt="" /></button>
               <button><img src="src/images/likes.svg" alt="" /></button>
-              <button onClick={() => setCartOpen(true)}><img src="/images/shop.svg" alt="" /></button>
+              <button onClick={() => setCartOpen(true)}>
+                  <img src="src/images/shop.svg" alt="Cart" />
+                </button>
             </div>
           </div>
         </nav>
       </div>
     </header>
 
-    {cartOpen && <div className="overlay" onClick={() => setCartOpen(false)}></div>}
+    {cartOpen && <div className="over" onClick={() => setCartOpen(false)}></div>}
 
-    <div className={`cart ${cartOpen ? "open" : ""}`}>
-                <button className="close-btn" onClick={() => setCartOpen(false)}><img src="/images/x.svg" alt="" /></button>
-                <h2>Shopping Cart</h2>
-                <div className="sub">
-                    <div className="text">
-                        <p>Subtotal</p>
-                    </div><br />
-                    <div className="bt">
-                        <button>Cart</button>
-                        <button>Checkout</button>
-                        <button>Comparison</button>
-                    </div>
-                </div>
-            </div>
-
-    <div className="hero">
-      <div className="container">
-        <div className="hero-text">
-            <img src="src/images/home-arrow.svg" alt="" />
-            <img src="src/images/shop-arrow.svg" alt="" />
-            <img src="src/images/line.svg" alt="" />
-            <h4>Syltherine</h4>
-          </div>
+<div className={`cart ${cartOpen ? "open" : ""}`}>
+  <button className="close-btn" onClick={() => setCartOpen(false)}>
+    <img src="src/images/back.svg" alt="Close" />
+  </button>
+  <h2>Shopping Cart</h2>
+  <div className="cart-items">
+    <div className="cart-item">
+      <img src="/images/product1.svg" alt="Asgaard sofa" />
+      <div>
+        <p>Asgaard sofa</p>
+        <p className="second_price">Rs. 250,000.00</p>
       </div>
+      <button className="image_btn"><img src="src/images/btn_x.svg" alt="" /></button>
     </div>
+    <div className="cart-item">
+      <img src="/images/product2.svg" alt="Casaliving Wood" />
+      <div>
+        <p>Casaliving Wood</p>
+        <p className="second_price">Rs. 270,000.00</p>
+      </div>
+      <button className="image_btn"><img src="src/images/btn_x.svg" alt="" /></button>
+    </div>
+  </div>
+  <div className="cart-footer">
+    <p>Subtotal: <strong>Rs. 520,000.00</strong></p>
+    <div className="btns ">
+    <button className="btn_cart">Cart</button>
+    <button className="btn_checkout">Checkout</button>
+    <button className="btn_comparison">Comparison</button>
+    </div>
+  </div>
+</div>
 
     <div className="product-detail">
       

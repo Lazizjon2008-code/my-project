@@ -1,6 +1,7 @@
-import './Home.css'
-import './main.css'
+import './Home.css';
+import './main.css';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 import Shop from './Shop';
 import About from './About';
 import Contact from './Contact';
@@ -13,7 +14,12 @@ import Muggo from './Muggo';
 import Pingky from './Pingky';
 import Potty from './Potty';
 
-
+interface CartItem {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+}
 
 function Logo() {
   const location = useLocation();
@@ -51,7 +57,7 @@ function App() {
         <Route path="/Lolito" element={<Lolito />}/>
         <Route path="/Respira" element={<Respira/>}/>
         <Route path="/Grifo" element={<Grifo />}/>
-        <Route path="/" element={<Muggo />}/>
+        <Route path="/Muggo" element={<Muggo />}/>
         <Route path="/Pingky" element={<Pingky />}/>
         <Route path="/Potty" element={<Potty />}/>
       </Routes>
@@ -62,6 +68,15 @@ function App() {
 
 
 function HomePage() {
+  const [cartOpen, setCartOpen] = useState<boolean>(false);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+  const removeFromCart = (index: number) => {
+    setCartItems((prevItems) => prevItems.filter((_, i) => i !== index));
+  };
+
+  const calculateTotal = (items: CartItem[]): number =>
+    items.reduce((total, item) => total + item.price, 0);
 
   return (
     <>
@@ -82,51 +97,55 @@ function HomePage() {
               <button><img src="src/images/blog.svg" alt="" /></button>
               <button><img src="src/images/search.svg" alt="" /></button>
               <button><img src="src/images/likes.svg" alt="" /></button>
-              <button><img src="src/images/shop.svg" alt="" /></button>
+              <button onClick={() => setCartOpen(!cartOpen)}>
+                <img src="src/images/shop.svg" alt="Cart" />
+              </button>
             </div>
           </div>
         </nav>
       </div>
     </header>
 
-    {/* <div className={`cart ${cartOpen ? "open" : ""}`}>
-        <button className="close-btn" onClick={() => setCartOpen(false)}><img src="/images/x.svg" alt="" /></button>
+    <div className={`cart ${cartOpen ? 'open' : ''}`}>
+        <button className="close-btn" onClick={() => setCartOpen(false)}>
+          <img src="/images/x.svg" alt="Close" />
+        </button>
         <h2>Shopping Cart</h2>
-
         <div className="cart-items">
           {cartItems.length === 0 ? (
             <p>Your cart is empty</p>
           ) : (
-            <>
-              {cartItems.map((item, index) => (
-                <div key={`${item.id}-${index}`} className="cart-item">
-                  <img src={item.image} alt={item.name} className="cart-item-image" />
-                  <div className="cart-item-details">
-                    <h4>{item.name}</h4>
-                    <p>{item.price}</p>
-                  </div>
-                  <button onClick={() => removeFromCart(index)} className="remove-item">
-                    <img src="/images/x.svg" alt="Remove" />
-                  </button>
+            cartItems.map((item, index) => (
+              <div key={`${item.id}-${index}`} className="cart-item">
+                <img src={item.image} alt={item.name} className="cart-item-image" />
+                <div className="cart-item-details">
+                  <h4>{item.name}</h4>
+                  <p>Rp {item.price}</p>
                 </div>
-              ))}
-            </>
+                <button
+                  onClick={() => removeFromCart(index)}
+                  className="remove-item"
+                >
+                  <img src="/images/x.svg" alt="Remove" />
+                </button>
+              </div>
+            ))
           )}
         </div>
-
         <div className="sub">
           <div className="text">
             <p>Subtotal: Rp {calculateTotal(cartItems)}</p>
-          </div><br />
+          </div>
           <div className="bt">
             <button>Cart</button>
-            <Link to="/Checkout"  >
-              <button>Checkout</button></Link>
+            <Link to="/Checkout">
+              <button>Checkout</button>
+            </Link>
             <button>Comparison</button>
           </div>
         </div>
       </div>
- */}
+
 
     <section className='hero_of_page'>
       <div className="container">
@@ -172,7 +191,8 @@ function HomePage() {
 
           <div className='Products_to_sell'>
             <div className='products'>
-              <div className='about_Syltherine'>
+            <Link to="/Syltherine">
+            <div className='about_Syltherine'>
                 <div className="product-card">
                 <img src="src/images/Syltherine.svg" alt="" />
                 <div className="overlay">
@@ -187,7 +207,9 @@ function HomePage() {
                 </div>
                 </div>
               </div>
-              <div className='about_Leviosa'>
+            </Link>
+            <Link to={'/Leviosa'}>
+            <div className='about_Leviosa'>
                 <div className="product-card">
                 <img src="src/images/Leviosa.svg" alt="" />
                   <div className="overlay">
@@ -199,7 +221,9 @@ function HomePage() {
                 <h5>Rp 2.500.000</h5>
                 </div>
               </div>
-              <div className='about_Lolito'>
+            </Link>
+            <Link to={'/Lolito'}>
+            <div className='about_Lolito'>
                 <div className="product-card">
                 <img src="src/images/lolito.svg" alt="" />
                 <div className="overlay">
@@ -214,7 +238,9 @@ function HomePage() {
                 </div>
                 </div>
               </div>
-              <div className='about_Respira'>
+            </Link>
+            <Link to={'/Respira'}>
+            <div className='about_Respira'>
                 <div className="product-card">
                 <img src="src/images/respira.svg" alt="" />
                   <div className="overlay">
@@ -226,8 +252,10 @@ function HomePage() {
                 <h5>Rp 500.000</h5>
                 </div>
               </div>
+            </Link>
             </div>
             <div className='another_products'>
+              <Link to={'/Grifo'}>
               <div className='about_grifo'>
                 <div className='product-card'>
                 <img src="src/images/grifo.svg" alt="" />
@@ -240,6 +268,8 @@ function HomePage() {
                 <h5>Rp 1.500.000</h5>
                 </div>
               </div>
+              </Link>
+              <Link to={'/Muggo'}>
               <div className='about_grifo'>
                 <div className='product-card'>
                 <img src="src/images/muggo.svg" alt="" />
@@ -252,6 +282,8 @@ function HomePage() {
                 <h5>Rp 150.000</h5>
                 </div>
               </div>
+              </Link>
+              <Link to={'/Pingky'}>
               <div className='about_Syltherine'>
                 <div className="product-card">
                 <img src="src/images/pinckgy.svg" alt="" />
@@ -267,6 +299,8 @@ function HomePage() {
                 </div>
                 </div>
               </div>
+              </Link>
+              <Link to={'/Potty'}>
               <div className='about_grifo'>
                 <div className="product-card">
                 <img src="src/images/potty.svg" alt="" />
@@ -279,6 +313,7 @@ function HomePage() {
                 <h5>Rp 500.000</h5>
                 </div>
               </div>
+              </Link>
             </div>
 
             <button className='show_another_products'>Show More</button>

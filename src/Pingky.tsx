@@ -16,7 +16,7 @@ function Logo() {
 function Navigation() {
   const location = useLocation();
 
-  return location.pathname !== "/pingky" ? (
+  return location.pathname !== "/Pingky" ? (
       <nav className="nav">
           <Link to="/" >Home</Link>
           <Link to="/shop" style={{ marginLeft: '60px' }}>Shop</Link>

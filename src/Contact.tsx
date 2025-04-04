@@ -1,5 +1,18 @@
 import './Contaxt.css'
+import { useState } from 'react';
 import { Link, useLocation } from "react-router-dom";
+
+interface CartItem {
+  id: string;
+  name: string;
+  price: string;
+  image: string;
+  originalPrice?: string;
+}
+
+function calculateTotal(items: CartItem[]): string {
+  return items.length.toString();
+}
 
 function Logo() {
   const location = useLocation();
@@ -26,6 +39,14 @@ function Navigation() {
 
 
 function Contact() {
+    const [cartOpen, setCartOpen] = useState(false);
+    const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+    const removeFromCart = (index: number) => {
+      const newCartItems = [...cartItems];
+      newCartItems.splice(index, 1);
+      setCartItems(newCartItems);
+    };
     return (
     <>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></link>
@@ -51,12 +72,56 @@ function Contact() {
               <button><img src="src/images/blog.svg" alt="" /></button>
               <button><img src="src/images/search.svg" alt="" /></button>
               <button><img src="src/images/likes.svg" alt="" /></button>
-              <button><img src="src/images/shop.svg" alt="" /></button>
+              <button onClick={() => setCartOpen(true)}>
+                  <img src="src/images/shop.svg" alt="Cart" />
+                  {cartItems.length > 0 && (
+                    <span className="cart-count">{cartItems.length}</span>
+                  )}
+                </button>
             </div>
           </div>
         </nav>
       </div>
     </header>
+
+            {cartOpen && <div className="over" onClick={() => setCartOpen(false)}></div>}
+        
+        <div className={`cart ${cartOpen ? "open" : ""}`}>
+          <button className="close-btn" onClick={() => setCartOpen(false)}>
+            <img src="src/images/back.svg" alt="Close" />
+          </button>
+          <h2>Shopping Cart</h2>
+          <div className="cart-items">
+                  {cartItems.length === 0 ? (
+                    <p>Your cart is empty</p>
+                  ) : (
+                    <>
+                      {cartItems.map((item, index) => (
+                        <div key={`${item.id}-${index}`} className="cart-item">
+                          <img src={item.image} alt={item.name} />
+                          <div className="cart-item-details">
+                            <h4>{item.name}</h4>
+                            <p>{item.price}</p>
+                          </div>
+                          <button onClick={() => removeFromCart(index)} className="image_btn">
+                            <img src="src/images/btn_x.svg" alt="Remove" />
+                          </button>
+                        </div>
+                      ))}
+                    </>
+                  )}
+                </div>
+          <div className="cart-footer">
+            <div className='calculate'>
+              <p>Subtotal: Rp {calculateTotal(cartItems)}</p>
+            </div>
+            <div className="btns ">
+            <button className="btn_cart">Cart</button>
+            <Link to={'/Checkout'}><button className="btn_checkout">Checkout</button></Link>
+            <button className="btn_comparison">Comparison</button>
+            </div>
+          </div>
+        </div>
 
     <section className='contact_section'>
       <div className="container">

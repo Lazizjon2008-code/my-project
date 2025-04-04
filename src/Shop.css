@@ -333,7 +333,7 @@ select {
 }
 
 .footer {
-    margin-top: 100px;
+  margin-top: 0px;
     background-color: #f8f8f8;
     padding: 40px 60px;
     color: #333;

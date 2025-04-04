@@ -1,7 +1,7 @@
 import './Home.css';
+import  { useState } from 'react';
 import './main.css';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
-import { useState } from "react";
 import Shop from './Shop';
 import About from './About';
 import Contact from './Contact';
@@ -13,12 +13,18 @@ import Grifo from './Grifo';
 import Muggo from './Muggo';
 import Pingky from './Pingky';
 import Potty from './Potty';
+import Checkout from './Checkout';
 
 interface CartItem {
-  id: number;
+  id: string;
   name: string;
-  price: number;
+  price: string;
   image: string;
+  originalPrice?: string;
+}
+
+function calculateTotal(items: CartItem[]): string {
+  return items.length.toString();
 }
 
 function Logo() {
@@ -60,6 +66,7 @@ function App() {
         <Route path="/Muggo" element={<Muggo />}/>
         <Route path="/Pingky" element={<Pingky />}/>
         <Route path="/Potty" element={<Potty />}/>
+        <Route path="/Checkout" element={<Checkout />}/>
       </Routes>
     </Router>
   );
@@ -68,15 +75,89 @@ function App() {
 
 
 function HomePage() {
-  const [cartOpen, setCartOpen] = useState<boolean>(false);
+  const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  const removeFromCart = (index: number) => {
-    setCartItems((prevItems) => prevItems.filter((_, i) => i !== index));
+  const products = [
+    {
+      id: "1",
+      name: "Syltherine",
+      description: "Stylish cafe chair",
+      price: "Rp 2.500.000",
+      originalPrice: "Rp 3.500.000",
+      image: "src/images/Syltherine.svg",
+      link: "/Syltherine"
+    },
+    {
+      id: "2",
+      name: "Leviosa",
+      description: "Stylish cafe chair",
+      price: "Rp 2.500.000",
+      image: "src/images/Leviosa.svg",
+      link: "/Leviosa"
+    },
+    {
+      id: "3",
+      name: "Lolito",
+      description: "Luxury big sofa",
+      price: "Rp 7.000.000",
+      originalPrice: "Rp 14.000.000",
+      image: "src/images/Lolito.svg",
+      link: "/Lolito"
+    },
+    {
+      id: "4",
+      name: "Respira",
+      description: "Outdoor bar table and stool",
+      price: "Rp 500.000",
+      image: "src/images/respira.svg",
+      link: "/Respira"
+    },
+    {
+      id: "5",
+      name: "Grifo",
+      description: "Night lamp",
+      price: "Rp 1.500.000",
+      image: "src/images/grifo.svg",
+      link: "/Grifo"
+    },
+    {
+      id: "6",
+      name: "Muggo",
+      description: "Small mug",
+      price: "Rp 150.000",
+      image: "src/images/muggo.svg",
+      link: "/Muggo"
+    },
+    {
+      id: "7",
+      name: "Pingky",
+      description: "Cute bed set",
+      price: "Rp 7.000.000",
+      originalPrice: "Rp 14.000.000",
+      image: "src/images/pinckgy.svg",
+      link: "/Pingky"
+    },
+    {
+      id: "8",
+      name: "Potty",
+      description: "Minimalist flower pot",
+      price: "Rp 500.000",
+      image: "src/images/potty.svg",
+      link: "/Potty"
+    }
+  ];
+
+  const addToCart = (product: CartItem) => {
+    setCartItems([...cartItems, product]);
+    setCartOpen(true); // Open the cart when an item is added
   };
 
-  const calculateTotal = (items: CartItem[]): number =>
-    items.reduce((total, item) => total + item.price, 0);
+  const removeFromCart = (index: number) => {
+    const newCartItems = [...cartItems];
+    newCartItems.splice(index, 1);
+    setCartItems(newCartItems);
+  };
 
   return (
     <>
@@ -97,54 +178,58 @@ function HomePage() {
               <button><img src="src/images/blog.svg" alt="" /></button>
               <button><img src="src/images/search.svg" alt="" /></button>
               <button><img src="src/images/likes.svg" alt="" /></button>
-              <button onClick={() => setCartOpen(!cartOpen)}>
-                <img src="src/images/shop.svg" alt="Cart" />
-              </button>
+              <button onClick={() => setCartOpen(true)}>
+                  <img src="src/images/shop.svg" alt="Cart" />
+                  {cartItems.length > 0 && (
+                    <span className="cart-count">{cartItems.length}</span>
+                  )}
+                </button>
             </div>
           </div>
         </nav>
       </div>
     </header>
 
-    <div className={`cart ${cartOpen ? 'open' : ''}`}>
-        <button className="close-btn" onClick={() => setCartOpen(false)}>
-          <img src="/images/x.svg" alt="Close" />
-        </button>
-        <h2>Shopping Cart</h2>
-        <div className="cart-items">
+
+    {cartOpen && <div className="over" onClick={() => setCartOpen(false)}></div>}
+
+<div className={`cart ${cartOpen ? "open" : ""}`}>
+  <button className="close-btn" onClick={() => setCartOpen(false)}>
+    <img src="src/images/back.svg" alt="Close" />
+  </button>
+  <h2>Shopping Cart</h2>
+  <div className="cart-items">
           {cartItems.length === 0 ? (
             <p>Your cart is empty</p>
           ) : (
-            cartItems.map((item, index) => (
-              <div key={`${item.id}-${index}`} className="cart-item">
-                <img src={item.image} alt={item.name} className="cart-item-image" />
-                <div className="cart-item-details">
-                  <h4>{item.name}</h4>
-                  <p>Rp {item.price}</p>
+            <>
+              {cartItems.map((item, index) => (
+                <div key={`${item.id}-${index}`} className="cart-item">
+                  <img src={item.image} alt={item.name} />
+                  <div className="cart-item-details">
+                    <h4>{item.name}</h4>
+                    <p>{item.price}</p>
+                  </div>
+                  <button onClick={() => removeFromCart(index)} className="image_btn">
+                    <img src="src/images/btn_x.svg" alt="Remove" />
+                  </button>
                 </div>
-                <button
-                  onClick={() => removeFromCart(index)}
-                  className="remove-item"
-                >
-                  <img src="/images/x.svg" alt="Remove" />
-                </button>
-              </div>
-            ))
+              ))}
+            </>
           )}
         </div>
-        <div className="sub">
-          <div className="text">
-            <p>Subtotal: Rp {calculateTotal(cartItems)}</p>
-          </div>
-          <div className="bt">
-            <button>Cart</button>
-            <Link to="/Checkout">
-              <button>Checkout</button>
-            </Link>
-            <button>Comparison</button>
-          </div>
-        </div>
-      </div>
+  <div className="cart-footer">
+    <div className='calculate'>
+      <p>Subtotal: Rp {calculateTotal(cartItems)}</p>
+    </div>
+    <div className="btns">
+    <button className="btn_cart">Cart</button>
+    <Link to={'/Checkout'}><button className="btn_checkout">Checkout</button></Link>
+    <button className="btn_comparison">Comparison</button>
+    </div>
+  </div>
+</div>
+
 
 
     <section className='hero_of_page'>
@@ -191,129 +276,70 @@ function HomePage() {
 
           <div className='Products_to_sell'>
             <div className='products'>
-            <Link to="/Syltherine">
-            <div className='about_Syltherine'>
-                <div className="product-card">
-                <img src="src/images/Syltherine.svg" alt="" />
-                <div className="overlay">
-                    <button>Add to cart</button>
-                    <img src="/src/images/link.svg" alt="" />
-                  </div>
-                <h4>Syltherine</h4>
-                <p>Stylish cafe chair</p>
-                <div className='prices'>
-                  <h5>Rp 2.500.000</h5>
-                  <p>Rp 3.500.000</p>
-                </div>
-                </div>
-              </div>
-            </Link>
-            <Link to={'/Leviosa'}>
-            <div className='about_Leviosa'>
-                <div className="product-card">
-                <img src="src/images/Leviosa.svg" alt="" />
-                  <div className="overlay">
-                    <button>Add to cart</button>
-                    <img src="/src/images/link.svg" alt="" />
-                  </div>
-                <h4>Leviosa</h4>
-                <p>Stylish cafe chair</p>
-                <h5>Rp 2.500.000</h5>
-                </div>
-              </div>
-            </Link>
-            <Link to={'/Lolito'}>
-            <div className='about_Lolito'>
-                <div className="product-card">
-                <img src="src/images/lolito.svg" alt="" />
-                <div className="overlay">
-                    <button>Add to cart</button>
-                    <img src="/src/images/link.svg" alt="" />
-                  </div>
-                <h4>Lolito</h4>
-                <p>Luxury big sofa</p>
-                <div className='prices'>
-                  <h5>Rp 7.000.000</h5>
-                  <p>Rp 14.000.000</p>
-                </div>
-                </div>
-              </div>
-            </Link>
-            <Link to={'/Respira'}>
-            <div className='about_Respira'>
-                <div className="product-card">
-                <img src="src/images/respira.svg" alt="" />
-                  <div className="overlay">
-                    <button>Add to cart</button>
-                    <img src="/src/images/link.svg" alt="" />
-                  </div>
-                <h4>Respira</h4>
-                <p>Outdoor bar table and stool</p>
-                <h5>Rp 500.000</h5>
-                </div>
-              </div>
-            </Link>
+            {products.slice(0, 4).map(product => (
+                    <Link to={product.link} key={product.id} style={{ listStyle: 'none', textDecoration: 'none' }}>
+                      <div className='about_Leviosa'>
+                        <div className="product-card">
+                          <img src={product.image} alt={product.name} />
+                          <div className="overlay">
+                            <button onClick={(e) => {
+                              e.preventDefault();
+                              addToCart({
+                                id: product.id,
+                                name: product.name,
+                                price: product.price,
+                                image: product.image
+                              });
+                            }}>Add to cart</button>
+                            <img src="src/images/link.svg" alt="" />
+                          </div>
+                          <h4>{product.name}</h4>
+                          <p>{product.description}</p>
+                          {product.originalPrice ? (
+                            <div className='prices'>
+                              <h5>{product.price}</h5>
+                              <p>{product.originalPrice}</p>
+                            </div>
+                          ) : (
+                            <h5>{product.price}</h5>
+                          )}
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
             </div>
             <div className='another_products'>
-              <Link to={'/Grifo'}>
-              <div className='about_grifo'>
-                <div className='product-card'>
-                <img src="src/images/grifo.svg" alt="" />
-                  <div className="overlay">
-                    <button>Add to cart</button>
-                    <img src="/src/images/link.svg" alt="" />
-                  </div>
-                <h4>Grifo</h4>
-                <p>Night lamp</p>
-                <h5>Rp 1.500.000</h5>
-                </div>
-              </div>
-              </Link>
-              <Link to={'/Muggo'}>
-              <div className='about_grifo'>
-                <div className='product-card'>
-                <img src="src/images/muggo.svg" alt="" />
-                  <div className="overlay">
-                    <button>Add to cart</button>
-                    <img src="/src/images/link.svg" alt="" />
-                  </div>
-                <h4>Muggo</h4>
-                <p>Small mug</p>
-                <h5>Rp 150.000</h5>
-                </div>
-              </div>
-              </Link>
-              <Link to={'/Pingky'}>
-              <div className='about_Syltherine'>
-                <div className="product-card">
-                <img src="src/images/pinckgy.svg" alt="" />
-                  <div className="overlay">
-                    <button>Add to cart</button>
-                    <img src="/src/images/link.svg" alt="" />
-                  </div>
-                <h4>Pingky</h4>
-                <p>Cute bed set</p>
-                <div className='prices'>
-                  <h5>Rp 7.000.000</h5>
-                  <p>Rp 14.000.000</p>
-                </div>
-                </div>
-              </div>
-              </Link>
-              <Link to={'/Potty'}>
-              <div className='about_grifo'>
-                <div className="product-card">
-                <img src="src/images/potty.svg" alt="" />
-                  <div className="overlay">
-                    <button>Add to cart</button>
-                    <img src="src/images/link.svg" alt="" />
-                  </div>
-                <h4>Potty</h4>
-                <p>Minimalist flower pot</p>
-                <h5>Rp 500.000</h5>
-                </div>
-              </div>
-              </Link>
+            {products.slice(4, 8).map(product => (
+                    <Link to={product.link} key={product.id} style={{ listStyle: 'none', textDecoration: 'none' }}>
+                      <div className='about_Leviosa'>
+                        <div className="product-card">
+                          <img src={product.image} alt={product.name} />
+                          <div className="overlay">
+                            <button onClick={(e) => {
+                              e.preventDefault();
+                              addToCart({
+                                id: product.id,
+                                name: product.name,
+                                price: product.price,
+                                image: product.image
+                              });
+                            }}>Add to cart</button>
+                            <img src="src/images/link.svg" alt="" />
+                          </div>
+                          <h4>{product.name}</h4>
+                          <p>{product.description}</p>
+                          {product.originalPrice ? (
+                            <div className='prices'>
+                              <h5>{product.price}</h5>
+                              <p>{product.originalPrice}</p>
+                            </div>
+                          ) : (
+                            <h5>{product.price}</h5>
+                          )}
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
             </div>
 
             <button className='show_another_products'>Show More</button>
@@ -400,7 +426,7 @@ function HomePage() {
       </div>
     </section>
 
- <footer className="footer">
+ <footer style={{marginTop: '120px'}} className="footer">
       <div className="footer-container">    
         <div className="footer-section company-info">
           <h2 className="logo">Funiro.</h2>

@@ -3,6 +3,18 @@ import  { useState } from 'react';
 import './Syltherine.css'
 
 
+interface CartItem {
+  id: string;
+  name: string;
+  price: string;
+  image: string;
+  originalPrice?: string;
+}
+
+function calculateTotal(items: CartItem[]): string {
+  return items.length.toString();
+}
+
 function Logo() {
   const location = useLocation();
 
@@ -31,6 +43,54 @@ function Syltherine() {
 
   const [cartOpen, setCartOpen] = useState(false);
   const [count, setCount] = useState(1);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+  const products = [
+    {
+      id: "1",
+      name: "Syltherine",
+      description: "Stylish cafe chair",
+      price: "Rp 2.500.000",
+      originalPrice: "Rp 3.500.000",
+      image: "src/images/Syltherine.svg",
+      link: "/Syltherine"
+    },
+    {
+      id: "2",
+      name: "Leviosa",
+      description: "Stylish cafe chair",
+      price: "Rp 2.500.000",
+      image: "src/images/Leviosa.svg",
+      link: "/Leviosa"
+    },
+    {
+      id: "3",
+      name: "Lolito",
+      description: "Luxury big sofa",
+      price: "Rp 7.000.000",
+      originalPrice: "Rp 14.000.000",
+      image: "src/images/Lolito.svg",
+      link: "/Lolito"
+    },
+    {
+      id: "4",
+      name: "Respira",
+      description: "Outdoor bar table and stool",
+      price: "Rp 500.000",
+      image: "src/images/respira.svg",
+      link: "/Respira"
+    },
+  ];
+
+  const addToCart = (product: CartItem) => {
+    setCartItems([...cartItems, product]);
+  };
+
+  const removeFromCart = (index: number) => {
+    const newCartItems = [...cartItems];
+    newCartItems.splice(index, 1);
+    setCartItems(newCartItems);
+  };
 
     return (
     <>
@@ -59,6 +119,9 @@ function Syltherine() {
               <button><img src="src/images/likes.svg" alt="" /></button>
               <button onClick={() => setCartOpen(true)}>
                   <img src="src/images/shop.svg" alt="Cart" />
+                  {cartItems.length > 0 && (
+                    <span className="cart-count">{cartItems.length}</span>
+                  )}
                 </button>
             </div>
           </div>
@@ -74,25 +137,27 @@ function Syltherine() {
   </button>
   <h2>Shopping Cart</h2>
   <div className="cart-items">
-    <div className="cart-item">
-      <img src="/images/product1.svg" alt="Asgaard sofa" />
-      <div>
-        <p>Asgaard sofa</p>
-        <p className="second_price">Rs. 250,000.00</p>
-      </div>
-      <button className="image_btn"><img src="src/images/btn_x.svg" alt="" /></button>
-    </div>
-    <div className="cart-item">
-      <img src="/images/product2.svg" alt="Casaliving Wood" />
-      <div>
-        <p>Casaliving Wood</p>
-        <p className="second_price">Rs. 270,000.00</p>
-      </div>
-      <button className="image_btn"><img src="src/images/btn_x.svg" alt="" /></button>
-    </div>
-  </div>
+          {cartItems.length === 0 ? (
+            <p>Your cart is empty</p>
+          ) : (
+            <>
+              {cartItems.map((item, index) => (
+                <div key={`${item.id}-${index}`} className="cart-item">
+                  <img src={item.image} alt={item.name} />
+                  <div className="cart-item-details">
+                    <h4>{item.name}</h4>
+                    <p>{item.price}</p>
+                  </div>
+                  <button onClick={() => removeFromCart(index)} className="image_btn">
+                    <img src="src/images/btn_x.svg" alt="Remove" />
+                  </button>
+                </div>
+              ))}
+            </>
+          )}
+        </div>
   <div className="cart-footer">
-    <p>Subtotal: <strong>Rs. 520,000.00</strong></p>
+  <p>Subtotal: Rp {calculateTotal(cartItems)}</p>
     <div className="btns ">
     <button className="btn_cart">Cart</button>
     <button className="btn_checkout">Checkout</button>
@@ -177,60 +242,37 @@ function Syltherine() {
           <h1>Related Products</h1>
 
           <div className='products'>
-              <div className='about_Syltherine'>
-                <div className="product-card">
-                <img src="src/images/Syltherine.svg" alt="" />
-                <div className="overlay">
-                    <button>Add to cart</button>
-                    <img src="/src/images/link.svg" alt="" />
-                  </div>
-                <h4>Syltherine</h4>
-                <p>Stylish cafe chair</p>
-                <div className='prices'>
-                  <h5>Rp 2.500.000</h5>
-                  <p>Rp 3.500.000</p>
-                </div>
-                </div>
-              </div>
-              <div className='about_Leviosa'>
-                <div className="product-card">
-                <img src="src/images/Leviosa.svg" alt="" />
-                  <div className="overlay">
-                    <button>Add to cart</button>
-                    <img src="/src/images/link.svg" alt="" />
-                  </div>
-                <h4>Leviosa</h4>
-                <p>Stylish cafe chair</p>
-                <h5>Rp 2.500.000</h5>
-                </div>
-              </div>
-              <div className='about_Lolito'>
-                <div className="product-card">
-                <img src="src/images/lolito.svg" alt="" />
-                <div className="overlay">
-                    <button>Add to cart</button>
-                    <img src="/src/images/link.svg" alt="" />
-                  </div>
-                <h4>Lolito</h4>
-                <p>Luxury big sofa</p>
-                <div className='prices'>
-                  <h5>Rp 7.000.000</h5>
-                  <p>Rp 14.000.000</p>
-                </div>
-                </div>
-              </div>
-              <div className='about_Respira'>
-                <div className="product-card">
-                <img src="src/images/respira.svg" alt="" />
-                  <div className="overlay">
-                    <button>Add to cart</button>
-                    <img src="/src/images/link.svg" alt="" />
-                  </div>
-                <h4>Respira</h4>
-                <p>Outdoor bar table and stool</p>
-                <h5>Rp 500.000</h5>
-                </div>
-              </div>
+          {products.slice(0, 4).map(product => (
+                    <Link to={product.link} key={product.id} style={{ listStyle: 'none', textDecoration: 'none' }}>
+                      <div className='about_Leviosa'>
+                        <div className="product-card">
+                          <img src={product.image} alt={product.name} />
+                          <div className="overlay">
+                            <button onClick={(e) => {
+                              e.preventDefault();
+                              addToCart({
+                                id: product.id,
+                                name: product.name,
+                                price: product.price,
+                                image: product.image
+                              });
+                            }}>Add to cart</button>
+                            <img src="src/images/link.svg" alt="" />
+                          </div>
+                          <h4>{product.name}</h4>
+                          <p>{product.description}</p>
+                          {product.originalPrice ? (
+                            <div className='prices'>
+                              <h5>{product.price}</h5>
+                              <p>{product.originalPrice}</p>
+                            </div>
+                          ) : (
+                            <h5>{product.price}</h5>
+                          )}
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
             </div>
 
             <button className='show_another_products'>Show More</button>
@@ -238,7 +280,7 @@ function Syltherine() {
       </div>
     </section>
 
-    <footer className="footer">
+    <footer style={{marginTop: '100px'}} className="footer">
       <div className="footer-container">    
         <div className="footer-section company-info">
           <h2 className="logo">Funiro.</h2>

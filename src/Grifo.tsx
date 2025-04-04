@@ -1,6 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import  { useState } from 'react';
 import './Syltherine.css'
+import Checkout from "./Checkout";
 
 
 interface CartItem {
@@ -14,6 +15,18 @@ interface CartItem {
 function calculateTotal(items: CartItem[]): string {
   return items.length.toString();
 }
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/Checkout" element={<Checkout />}/>
+      </Routes>
+    </Router>
+  );
+}
+
+<App />
 
 
 function Logo() {
@@ -161,7 +174,7 @@ function Grifo() {
   <p>Subtotal: Rp {calculateTotal(cartItems)}</p>
     <div className="btns ">
     <button className="btn_cart">Cart</button>
-    <button className="btn_checkout">Checkout</button>
+    <Link to={'/Checkout'}><button className="btn_checkout">Checkout</button></Link>
     <button className="btn_comparison">Comparison</button>
     </div>
   </div>

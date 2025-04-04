@@ -142,9 +142,9 @@ const Shop: React.FC = () => {
               </div>
 
               <div className="btns_of_header">
-                <button><img src="//images/blog.svg" alt="Blog" /></button>
-                <button><img src="//images/search.svg" alt="Search" /></button>
-                <button><img src="//images/likes.svg" alt="Likes" /></button>
+              <button><img src="/images/blog.svg" alt="" /></button>
+              <button><img src="/images/search.svg" alt="" /></button>
+              <button><img src="/images/likes.svg" alt="" /></button>
                 <button onClick={() => setCartOpen(true)}>
                   <img src="/images/shop.svg" alt="Cart" />
                   {cartItems.length > 0 && (

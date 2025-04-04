@@ -83,7 +83,7 @@ function Lolito() {
       description: "Luxury big sofa",
       price: "Rp 7.000.000",
       originalPrice: "Rp 14.000.000",
-      image: "/images/Lolito.svg",
+      image: "/images/lolito.svg",
       link: "/Lolito"
     },
     {

@@ -35,7 +35,7 @@ function Logo() {
 
   return location.pathname !== "/" ? (
     <nav className="nav">
-      <Link to="/"  ><img src="/images/Logo.svg" alt="" /></Link>
+      <Link to="/"  ><img src="Public/images/Logo.svg" alt="" /></Link>
     </nav>
   ) : null;
 }
@@ -67,7 +67,7 @@ function Potty() {
       description: "Stylish cafe chair",
       price: "Rp 2.500.000",
       originalPrice: "Rp 3.500.000",
-      image: "/images/Syltherine.svg",
+      image: "Public/images/Syltherine.svg",
       link: "/Syltherine"
     },
     {
@@ -75,7 +75,7 @@ function Potty() {
       name: "Leviosa",
       description: "Stylish cafe chair",
       price: "Rp 2.500.000",
-      image: "/images/Leviosa.svg",
+      image: "Public/images/Leviosa.svg",
       link: "/Leviosa"
     },
     {
@@ -84,7 +84,7 @@ function Potty() {
       description: "Luxury big sofa",
       price: "Rp 7.000.000",
       originalPrice: "Rp 14.000.000",
-      image: "/images/lolito.svg",
+      image: "Public/images/lolito.svg",
       link: "/Lolito"
     },
     {
@@ -92,7 +92,7 @@ function Potty() {
       name: "Respira",
       description: "Outdoor bar table and stool",
       price: "Rp 500.000",
-      image: "/images/respira.svg",
+      image: "Public/images/respira.svg",
       link: "/Respira"
     },
   ];
@@ -128,11 +128,11 @@ function Potty() {
             </div>
 
             <div className='btns_of_header'>
-              <button><img src="/images/blog.svg" alt="" /></button>
-              <button><img src="/images/search.svg" alt="" /></button>
-              <button><img src="/images/likes.svg" alt="" /></button>
+              <button><img src="Public/images/blog.svg" alt="" /></button>
+              <button><img src="Public/images/search.svg" alt="" /></button>
+              <button><img src="Public/images/likes.svg" alt="" /></button>
               <button onClick={() => setCartOpen(true)}>
-                  <img src="/images/shop.svg" alt="Cart" />
+                  <img src="Public/images/shop.svg" alt="Cart" />
                   {cartItems.length > 0 && (
                     <span className="cart-count">{cartItems.length}</span>
                   )}
@@ -147,7 +147,7 @@ function Potty() {
 
 <div className={`cart ${cartOpen ? "open" : ""}`}>
   <button className="close-btn" onClick={() => setCartOpen(false)}>
-    <img src="/images/back.svg" alt="Close" />
+    <img src="Public/images/back.svg" alt="Close" />
   </button>
   <h2>Shopping Cart</h2>
   <div className="cart-items">
@@ -163,7 +163,7 @@ function Potty() {
                     <p>{item.price}</p>
                   </div>
                   <button onClick={() => removeFromCart(index)} className="image_btn">
-                    <img src="/images/btn_x.svg" alt="Remove" />
+                    <img src="Public/images/btn_x.svg" alt="Remove" />
                   </button>
                 </div>
               ))}
@@ -183,9 +183,9 @@ function Potty() {
     <div className="hero">
       <div className="container">
         <div className="hero-text">
-            <img src="/images/home-arrow.svg" alt="" />
-            <img src="/images/shop-arrow.svg" alt="" />
-            <img src="/images/line.svg" alt="" />
+            <img src="Public/images/home-arrow.svg" alt="" />
+            <img src="Public/images/shop-arrow.svg" alt="" />
+            <img src="Public/images/line.svg" alt="" />
             <h4>Potty</h4>
           </div>
       </div>
@@ -196,12 +196,12 @@ function Potty() {
       <div className="product-content">
         <div className="product-gallery">
         <div className="thumbnail-list">
-            <img src="/images/potty.svg" alt="Thumbnail 1" />
-            <img src="/images/potty.svg" alt="Thumbnail 2" />
-            <img src="/images/potty.svg" alt="Thumbnail 3" />
-            <img src="/images/potty.svg" alt="Thumbnail 4" />
+            <img src="Public/images/potty.svg" alt="Thumbnail 1" />
+            <img src="Public/images/potty.svg" alt="Thumbnail 2" />
+            <img src="Public/images/potty.svg" alt="Thumbnail 3" />
+            <img src="Public/images/potty.svg" alt="Thumbnail 4" />
           </div>
-          <img src="/images/potty.svg" alt="Asgaard Sofa" className="main-image" />
+          <img src="Public/images/potty.svg" alt="Asgaard Sofa" className="main-image" />
         </div>
         
         <div className="product-info">
@@ -255,8 +255,8 @@ function Potty() {
     <section>
       <div className="container">
         <div className="images">
-          <img src="/images/potty.svg" alt="" />
-          <img src="/images/potty.svg" alt="" />
+          <img src="Public/images/potty.svg" alt="" />
+          <img src="Public/images/potty.svg" alt="" />
         </div>
       </div>
     </section>
@@ -282,7 +282,7 @@ function Potty() {
                                 image: product.image
                               });
                             }}>Add to cart</button>
-                            <img src="/images/link.svg" alt="" />
+                            <img src="Public/images/link.svg" alt="" />
                           </div>
                           <h4>{product.name}</h4>
                           <p>{product.description}</p>

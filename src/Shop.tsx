@@ -13,7 +13,7 @@ const Logo: React.FC = () => {
   return location.pathname !== "/" ? (
     <nav className="nav">
       <Link to="/">
-        <img src="/src/images/Logo.svg" alt="Funiro Logo" />
+        <img src="//images/Logo.svg" alt="Funiro Logo" />
       </Link>
     </nav>
   ) : null;
@@ -73,7 +73,7 @@ const Shop: React.FC = () => {
       description: "Stylish cafe chair",
       price: "Rp 2.500.000",
       originalPrice: "Rp 3.500.000",
-      image: "src/images/Syltherine.svg",
+      image: "/images/Syltherine.svg",
       link: "/Syltherine"
     },
     {
@@ -81,7 +81,7 @@ const Shop: React.FC = () => {
       name: "Leviosa",
       description: "Stylish cafe chair",
       price: "Rp 2.500.000",
-      image: "src/images/Leviosa.svg",
+      image: "/images/Leviosa.svg",
       link: "/Leviosa"
     },
     {
@@ -90,7 +90,7 @@ const Shop: React.FC = () => {
       description: "Luxury big sofa",
       price: "Rp 7.000.000",
       originalPrice: "Rp 14.000.000",
-      image: "src/images/Lolito.svg",
+      image: "/images/Lolito.svg",
       link: "/Lolito"
     },
     {
@@ -98,7 +98,7 @@ const Shop: React.FC = () => {
       name: "Respira",
       description: "Outdoor bar table and stool",
       price: "Rp 500.000",
-      image: "src/images/respira.svg",
+      image: "/images/respira.svg",
       link: "/Respira"
     },
   ];
@@ -142,11 +142,11 @@ const Shop: React.FC = () => {
               </div>
 
               <div className="btns_of_header">
-                <button><img src="/src/images/blog.svg" alt="Blog" /></button>
-                <button><img src="/src/images/search.svg" alt="Search" /></button>
-                <button><img src="/src/images/likes.svg" alt="Likes" /></button>
+                <button><img src="//images/blog.svg" alt="Blog" /></button>
+                <button><img src="//images/search.svg" alt="Search" /></button>
+                <button><img src="//images/likes.svg" alt="Likes" /></button>
                 <button onClick={() => setCartOpen(true)}>
-                  <img src="src/images/shop.svg" alt="Cart" />
+                  <img src="/images/shop.svg" alt="Cart" />
                   {cartItems.length > 0 && (
                     <span className="cart-count">{cartItems.length}</span>
                   )}
@@ -161,7 +161,7 @@ const Shop: React.FC = () => {
       
       <div className={`cart ${cartOpen ? "open" : ""}`}>
         <button className="close-btn" onClick={() => setCartOpen(false)}>
-          <img src="src/images/back.svg" alt="Close" />
+          <img src="/images/back.svg" alt="Close" />
         </button>
         <h2>Shopping Cart</h2>
         <div className="cart-items">
@@ -177,7 +177,7 @@ const Shop: React.FC = () => {
                           <p>{item.price}</p>
                         </div>
                         <button onClick={() => removeFromCart(index)} className="image_btn">
-                          <img src="src/images/btn_x.svg" alt="Remove" />
+                          <img src="/images/btn_x.svg" alt="Remove" />
                         </button>
                       </div>
                     ))}
@@ -202,7 +202,7 @@ const Shop: React.FC = () => {
         <div className="container">
           <div className="hero_title">
             <h2>Shop</h2>
-            <h5>Home <img src="/src/images/vector.svg" alt="Breadcrumb" /> Shop</h5>
+            <h5>Home <img src="//images/vector.svg" alt="Breadcrumb" /> Shop</h5>
           </div>
         </div>
       </section>
@@ -256,7 +256,7 @@ const Shop: React.FC = () => {
                                 image: product.image
                               });
                             }}>Add to cart</button>
-                            <img src="src/images/link.svg" alt="" />
+                            <img src="/images/link.svg" alt="" />
                           </div>
                           <h4>{product.name}</h4>
                           <p>{product.description}</p>
@@ -289,7 +289,7 @@ const Shop: React.FC = () => {
                                 image: product.image
                               });
                             }}>Add to cart</button>
-                            <img src="src/images/link.svg" alt="" />
+                            <img src="/images/link.svg" alt="" />
                           </div>
                           <h4>{product.name}</h4>
                           <p>{product.description}</p>
@@ -322,7 +322,7 @@ const Shop: React.FC = () => {
                                 image: product.image
                               });
                             }}>Add to cart</button>
-                            <img src="src/images/link.svg" alt="" />
+                            <img src="/images/link.svg" alt="" />
                           </div>
                           <h4>{product.name}</h4>
                           <p>{product.description}</p>
@@ -355,7 +355,7 @@ const Shop: React.FC = () => {
                                 image: product.image
                               });
                             }}>Add to cart</button>
-                            <img src="src/images/link.svg" alt="" />
+                            <img src="/images/link.svg" alt="" />
                           </div>
                           <h4>{product.name}</h4>
                           <p>{product.description}</p>
@@ -392,7 +392,7 @@ const Shop: React.FC = () => {
           { img: "operator", title: "24 / 7 Support", desc: "Dedicated support" },
         ].map((item, index) => (
           <div key={index} className="quality">
-            <img src={`/src/images/${item.img}.svg`} alt={item.title} />
+            <img src={`//images/${item.img}.svg`} alt={item.title} />
             <div>
               <h4>{item.title}</h4>
               <p>{item.desc}</p>

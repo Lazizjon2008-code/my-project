@@ -21,7 +21,7 @@ function Logo() {
 
   return location.pathname !== "/" ? (
     <nav className="nav">
-      <Link to="/"  ><img src="src/images/Logo.svg" alt="" /></Link>
+      <Link to="/"  ><img src="/images/Logo.svg" alt="" /></Link>
     </nav>
   ) : null;
 }
@@ -66,7 +66,7 @@ function Pingky() {
       description: "Stylish cafe chair",
       price: "Rp 2.500.000",
       originalPrice: "Rp 3.500.000",
-      image: "src/images/Syltherine.svg",
+      image: "/images/Syltherine.svg",
       link: "/Syltherine"
     },
     {
@@ -74,7 +74,7 @@ function Pingky() {
       name: "Leviosa",
       description: "Stylish cafe chair",
       price: "Rp 2.500.000",
-      image: "src/images/Leviosa.svg",
+      image: "/images/Leviosa.svg",
       link: "/Leviosa"
     },
     {
@@ -83,7 +83,7 @@ function Pingky() {
       description: "Luxury big sofa",
       price: "Rp 7.000.000",
       originalPrice: "Rp 14.000.000",
-      image: "src/images/Lolito.svg",
+      image: "/images/Lolito.svg",
       link: "/Lolito"
     },
     {
@@ -91,7 +91,7 @@ function Pingky() {
       name: "Respira",
       description: "Outdoor bar table and stool",
       price: "Rp 500.000",
-      image: "src/images/respira.svg",
+      image: "/images/respira.svg",
       link: "/Respira"
     },
   ];
@@ -128,11 +128,11 @@ function Pingky() {
             </div>
 
             <div className='btns_of_header'>
-              <button><img src="src/images/blog.svg" alt="" /></button>
-              <button><img src="src/images/search.svg" alt="" /></button>
-              <button><img src="src/images/likes.svg" alt="" /></button>
+              <button><img src="/images/blog.svg" alt="" /></button>
+              <button><img src="/images/search.svg" alt="" /></button>
+              <button><img src="/images/likes.svg" alt="" /></button>
               <button onClick={() => setCartOpen(true)}>
-                  <img src="src/images/shop.svg" alt="Cart" />
+                  <img src="/images/shop.svg" alt="Cart" />
                   {cartItems.length > 0 && (
                     <span className="cart-count">{cartItems.length}</span>
                   )}
@@ -147,7 +147,7 @@ function Pingky() {
 
 <div className={`cart ${cartOpen ? "open" : ""}`}>
   <button className="close-btn" onClick={() => setCartOpen(false)}>
-    <img src="src/images/back.svg" alt="Close" />
+    <img src="/images/back.svg" alt="Close" />
   </button>
   <h2>Shopping Cart</h2>
   <div className="cart-items">
@@ -163,7 +163,7 @@ function Pingky() {
                     <p>{item.price}</p>
                   </div>
                   <button onClick={() => removeFromCart(index)} className="image_btn">
-                    <img src="src/images/btn_x.svg" alt="Remove" />
+                    <img src="/images/btn_x.svg" alt="Remove" />
                   </button>
                 </div>
               ))}
@@ -183,9 +183,9 @@ function Pingky() {
     <div className="hero">
       <div className="container">
         <div className="hero-text">
-            <img src="src/images/home-arrow.svg" alt="" />
-            <img src="src/images/shop-arrow.svg" alt="" />
-            <img src="src/images/line.svg" alt="" />
+            <img src="/images/home-arrow.svg" alt="" />
+            <img src="/images/shop-arrow.svg" alt="" />
+            <img src="/images/line.svg" alt="" />
             <h4>Pingky</h4>
           </div>
       </div>
@@ -196,12 +196,12 @@ function Pingky() {
       <div className="product-content">
         <div className="product-gallery">
         <div className="thumbnail-list">
-            <img src="src/images/pinckgy.svg" alt="Thumbnail 1" />
-            <img src="src/images/pinckgy.svg" alt="Thumbnail 2" />
-            <img src="src/images/pinckgy.svg" alt="Thumbnail 3" />
-            <img src="src/images/pinckgy.svg" alt="Thumbnail 4" />
+            <img src="/images/pinckgy.svg" alt="Thumbnail 1" />
+            <img src="/images/pinckgy.svg" alt="Thumbnail 2" />
+            <img src="/images/pinckgy.svg" alt="Thumbnail 3" />
+            <img src="/images/pinckgy.svg" alt="Thumbnail 4" />
           </div>
-          <img src="src/images/pinckgy.svg" alt="Asgaard Sofa" className="main-image" />
+          <img src="/images/pinckgy.svg" alt="Asgaard Sofa" className="main-image" />
         </div>
         
         <div className="product-info">
@@ -255,8 +255,8 @@ function Pingky() {
     <section>
       <div className="container">
         <div className="images">
-          <img src="src/images/pinckgy.svg" alt="" />
-          <img src="src/images/pinckgy.svg" alt="" />
+          <img src="/images/pinckgy.svg" alt="" />
+          <img src="/images/pinckgy.svg" alt="" />
         </div>
       </div>
     </section>
@@ -282,7 +282,7 @@ function Pingky() {
                                 image: product.image
                               });
                             }}>Add to cart</button>
-                            <img src="src/images/link.svg" alt="" />
+                            <img src="/images/link.svg" alt="" />
                           </div>
                           <h4>{product.name}</h4>
                           <p>{product.description}</p>

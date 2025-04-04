@@ -6,7 +6,7 @@ function Logo() {
 
   return location.pathname !== "/ " ? (
     <nav className="nav">
-      <Link to="/"  ><img src="Public/images/Logo.svg" alt="" /></Link>
+      <Link to="/"  ><img src="/images/Logo.svg" alt="" /></Link>
     </nav>
   ) : null;
 }
@@ -47,10 +47,10 @@ function Checkout () {
             </div>
 
             <div className='btns_of_header'>
-              <button><img src="Public/images/blog.svg" alt="" /></button>
-              <button><img src="Public/images/search.svg" alt="" /></button>
-              <button><img src="Public/images/likes.svg" alt="" /></button>
-              <button><img src="Public/images/shop.svg" alt="" /></button>
+              <button><img src="/images/blog.svg" alt="" /></button>
+              <button><img src="/images/search.svg" alt="" /></button>
+              <button><img src="/images/likes.svg" alt="" /></button>
+              <button><img src="/images/shop.svg" alt="" /></button>
             </div>
           </div>
         </nav>
@@ -60,9 +60,9 @@ function Checkout () {
     <section className='hero_of_section'>
       <div className="container">
         <div className='title_of_hero'>
-          <img src="Public/images/half_logo.svg" alt="" />
+          <img src="/images/half_logo.svg" alt="" />
           <h2>Checkout</h2>
-          <h5>Home <img src="Public/images/vector.svg" alt="" /> Checkout</h5>
+          <h5>Home <img src="/images/vector.svg" alt="" /> Checkout</h5>
         </div>
       </div>
     </section>
@@ -172,28 +172,28 @@ function Checkout () {
     <section>
     <div className='about_shop'>
                 <div className='quality'>
-                    <img src="Public/images/trophy.svg" alt="" />
+                    <img src="/images/trophy.svg" alt="" />
                     <div>
                         <h4>High Quality</h4>
                         <p>crafted from top materials</p>
                     </div>
                 </div>
                 <div className='quality'>
-                    <img src="Public/images/true.svg" alt="" />
+                    <img src="/images/true.svg" alt="" />
                     <div>
                         <h4>Warranty Protection</h4>
                         <p>Over 2 years</p>
                     </div>
                 </div>
                 <div className='quality'>
-                    <img src="Public/images/shipping.svg" alt="" />
+                    <img src="/images/shipping.svg" alt="" />
                     <div>
                         <h4>Free Shipping</h4>
                         <p>Order over 150 $</p>
                     </div>
                 </div>
                 <div className='quality'>
-                    <img src="Public/images/operator.svg" alt="" />
+                    <img src="/images/operator.svg" alt="" />
                     <div>
                         <h4>24 / 7 Support</h4>
                         <p>Dedicated support</p>

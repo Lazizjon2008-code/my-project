@@ -32,7 +32,7 @@ function Logo() {
 
   return location.pathname !== "/" ? (
     <nav className="nav">
-      <Link to="/"  ><img src="Public/images/Logo.svg" alt="" /></Link>
+      <Link to="/"  ><img src="/images/Logo.svg" alt="" /></Link>
     </nav>
   ) : null;
 }
@@ -64,7 +64,7 @@ function Muggo() {
       description: "Stylish cafe chair",
       price: "Rp 2.500.000",
       originalPrice: "Rp 3.500.000",
-      image: "Public/images/Syltherine.svg",
+      image: "/images/Syltherine.svg",
       link: "/Syltherine"
     },
     {
@@ -72,7 +72,7 @@ function Muggo() {
       name: "Leviosa",
       description: "Stylish cafe chair",
       price: "Rp 2.500.000",
-      image: "Public/images/Leviosa.svg",
+      image: "/images/Leviosa.svg",
       link: "/Leviosa"
     },
     {
@@ -81,7 +81,7 @@ function Muggo() {
       description: "Luxury big sofa",
       price: "Rp 7.000.000",
       originalPrice: "Rp 14.000.000",
-      image: "Public/images/lolito.svg",
+      image: "/images/lolito.svg",
       link: "/Lolito"
     },
     {
@@ -89,7 +89,7 @@ function Muggo() {
       name: "Respira",
       description: "Outdoor bar table and stool",
       price: "Rp 500.000",
-      image: "Public/images/respira.svg",
+      image: "/images/respira.svg",
       link: "/Respira"
     },
   ];
@@ -125,11 +125,11 @@ function Muggo() {
             </div>
 
             <div className='btns_of_header'>
-              <button><img src="Public/images/blog.svg" alt="" /></button>
-              <button><img src="Public/images/search.svg" alt="" /></button>
-              <button><img src="Public/images/likes.svg" alt="" /></button>
+              <button><img src="/images/blog.svg" alt="" /></button>
+              <button><img src="/images/search.svg" alt="" /></button>
+              <button><img src="/images/likes.svg" alt="" /></button>
               <button onClick={() => setCartOpen(true)}>
-                  <img src="Public/images/shop.svg" alt="Cart" />
+                  <img src="/images/shop.svg" alt="Cart" />
                   {cartItems.length > 0 && (
                     <span className="cart-count">{cartItems.length}</span>
                   )}
@@ -144,7 +144,7 @@ function Muggo() {
 
 <div className={`cart ${cartOpen ? "open" : ""}`}>
   <button className="close-btn" onClick={() => setCartOpen(false)}>
-    <img src="Public/images/back.svg" alt="Close" />
+    <img src="/images/back.svg" alt="Close" />
   </button>
   <h2>Shopping Cart</h2>
   <div className="cart-items">
@@ -160,7 +160,7 @@ function Muggo() {
                     <p>{item.price}</p>
                   </div>
                   <button onClick={() => removeFromCart(index)} className="image_btn">
-                    <img src="Public/images/btn_x.svg" alt="Remove" />
+                    <img src="/images/btn_x.svg" alt="Remove" />
                   </button>
                 </div>
               ))}
@@ -180,9 +180,9 @@ function Muggo() {
     <div className="hero">
       <div className="container">
         <div className="hero-text">
-            <img src="Public/images/home-arrow.svg" alt="" />
-            <img src="Public/images/shop-arrow.svg" alt="" />
-            <img src="Public/images/line.svg" alt="" />
+            <img src="/images/home-arrow.svg" alt="" />
+            <img src="/images/shop-arrow.svg" alt="" />
+            <img src="/images/line.svg" alt="" />
             <h4>Muggo</h4>
           </div>
       </div>
@@ -193,12 +193,12 @@ function Muggo() {
       <div className="product-content">
         <div className="product-gallery">
         <div className="thumbnail-list">
-            <img src="Public/images/muggo.svg" alt="Thumbnail 1" />
-            <img src="Public/images/muggo.svg" alt="Thumbnail 2" />
-            <img src="Public/images/muggo.svg" alt="Thumbnail 3" />
-            <img src="Public/images/muggo.svg" alt="Thumbnail 4" />
+            <img src="/images/muggo.svg" alt="Thumbnail 1" />
+            <img src="/images/muggo.svg" alt="Thumbnail 2" />
+            <img src="/images/muggo.svg" alt="Thumbnail 3" />
+            <img src="/images/muggo.svg" alt="Thumbnail 4" />
           </div>
-          <img src="Public/images/muggo.svg" alt="Asgaard Sofa" className="main-image" />
+          <img src="/images/muggo.svg" alt="Asgaard Sofa" className="main-image" />
         </div>
         
         <div className="product-info">
@@ -252,8 +252,8 @@ function Muggo() {
     <section>
       <div className="container">
         <div className="images">
-          <img src="Public/images/muggo.svg" alt="" />
-          <img src="Public/images/muggo.svg" alt="" />
+          <img src="/images/muggo.svg" alt="" />
+          <img src="/images/muggo.svg" alt="" />
         </div>
       </div>
     </section>
@@ -279,7 +279,7 @@ function Muggo() {
                                 image: product.image
                               });
                             }}>Add to cart</button>
-                            <img src="Public/images/link.svg" alt="" />
+                            <img src="/images/link.svg" alt="" />
                           </div>
                           <h4>{product.name}</h4>
                           <p>{product.description}</p>

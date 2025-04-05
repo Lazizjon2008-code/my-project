@@ -48,7 +48,7 @@ function Checkout () {
 
             <div className='btns_of_header'>
               <button><img src="/images/blog.svg" alt="" /></button>
-              <button><img src="/images/search.svg" alt="" /></button>
+              <button><img src="/images/Search.svg" alt="" /></button>
               <button><img src="/images/likes.svg" alt="" /></button>
               <button><img src="/images/shop.svg" alt="" /></button>
             </div>

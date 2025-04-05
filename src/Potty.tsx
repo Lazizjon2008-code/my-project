@@ -129,7 +129,7 @@ function Potty() {
 
             <div className='btns_of_header'>
               <button><img src="d/images/blog.svg" alt="" /></button>
-              <button><img src="d/images/search.svg" alt="" /></button>
+              <button><img src="/images/Search.svg" alt="" /></button>
               <button><img src="d/images/likes.svg" alt="" /></button>
               <button onClick={() => setCartOpen(true)}>
                   <img src="d/images/shop.svg" alt="Cart" />

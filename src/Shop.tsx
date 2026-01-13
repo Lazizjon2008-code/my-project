@@ -392,7 +392,7 @@ const Shop: React.FC = () => {
           { img: "operator", title: "24 / 7 Support", desc: "Dedicated support" },
         ].map((item, index) => (
           <div key={index} className="quality">
-            <img src={`//images/${item.img}.svg`} alt={item.title} />
+            <img src={`/images/${item.img}.svg`} alt={item.title} />
             <div>
               <h4>{item.title}</h4>
               <p>{item.desc}</p>

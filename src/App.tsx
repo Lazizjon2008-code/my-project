@@ -54,7 +54,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} /> 
         <Route path="/shop" element={<Shop />} />
         <Route path="/blog" element={<About />} />
         <Route path="/contact" element={<Contact />}/>
@@ -69,6 +69,8 @@ function App() {
         <Route path="/Checkout" element={<Checkout />}/>
       </Routes>
     </Router>
+    
+    
   );
 }
 
@@ -85,7 +87,7 @@ function HomePage() {
       description: "Stylish cafe chair",
       price: "Rp 2.500.000",
       originalPrice: "Rp 3.500.000",
-      image: "/images/Syltherine.svg",
+      image: "/Syltherine.svg",
       link: "/Syltherine"
     },
     {
@@ -93,7 +95,7 @@ function HomePage() {
       name: "Leviosa",
       description: "Stylish cafe chair",
       price: "Rp 2.500.000",
-      image: "/images/Leviosa.svg",
+      image: "/Leviosa.svg",
       link: "/Leviosa"
     },
     {
@@ -102,7 +104,7 @@ function HomePage() {
       description: "Luxury big sofa",
       price: "Rp 7.000.000",
       originalPrice: "Rp 14.000.000",
-      image: "/images/lolito.svg",
+      image: "/lolito.svg",
       link: "/Lolito"
     },
     {
@@ -110,7 +112,7 @@ function HomePage() {
       name: "Respira",
       description: "Outdoor bar table and stool",
       price: "Rp 500.000",
-      image: "/images/respira.svg",
+      image: "/respira.svg",
       link: "/Respira"
     },
     {
@@ -118,7 +120,7 @@ function HomePage() {
       name: "Grifo",
       description: "Night lamp",
       price: "Rp 1.500.000",
-      image: "/images/grifo.svg",
+      image: "/grifo.svg",
       link: "/Grifo"
     },
     {
@@ -126,7 +128,7 @@ function HomePage() {
       name: "Muggo",
       description: "Small mug",
       price: "Rp 150.000",
-      image: "/images/muggo.svg",
+      image: "/muggo.svg",
       link: "/Muggo"
     },
     {
@@ -135,7 +137,7 @@ function HomePage() {
       description: "Cute bed set",
       price: "Rp 7.000.000",
       originalPrice: "Rp 14.000.000",
-      image: "/images/pinckgy.svg",
+      image: "/pinckgy.svg",
       link: "/Pingky"
     },
     {
@@ -143,7 +145,7 @@ function HomePage() {
       name: "Potty",
       description: "Minimalist flower pot",
       price: "Rp 500.000",
-      image: "/images/potty.svg",
+      image: "/potty.svg",
       link: "/Potty"
     }
   ];
@@ -175,11 +177,11 @@ function HomePage() {
             </div>
 
             <div className='btns_of_header'>
-              <button><img src="/images/blog.svg" alt="" /></button>
-              <button><img src="/images/Search.svg" alt="" /></button>
-              <button><img src="/images/likes.svg" alt="" /></button>
+              <button><img src="/blog.svg" alt="" /></button>
+              <button><img src="/Search.svg" alt="" /></button>
+              <button><img src="/likes.svg" alt="" /></button>
               <button onClick={() => setCartOpen(true)}>
-                  <img src="/images/shop.svg" alt="Cart" />
+                  <img src="/shop.svg" alt="Cart" />
                   {cartItems.length > 0 && (
                     <span className="cart-count">{cartItems.length}</span>
                   )}
@@ -195,7 +197,7 @@ function HomePage() {
 
 <div className={`cart ${cartOpen ? "open" : ""}`}>
   <button className="close-btn" onClick={() => setCartOpen(false)}>
-    <img src="/images/back.svg" alt="Close" />
+    <img src="/back.svg" alt="Close" />
   </button>
   <h2>Shopping Cart</h2>
   <div className="cart-items">
@@ -211,7 +213,7 @@ function HomePage() {
                     <p>{item.price}</p>
                   </div>
                   <button onClick={() => removeFromCart(index)} className="image_btn">
-                    <img src="/images/btn_x.svg" alt="Remove" />
+                    <img src="/btn_x.svg" alt="Remove" />
                   </button>
                 </div>
               ))}
@@ -253,15 +255,15 @@ function HomePage() {
 
           <div className='rooms'>
             <div>
-              <img src="/images/dining.svg" alt="" />
+              <img src="/dining.svg" alt="" />
               <h5>Dining</h5>
             </div>
             <div>
-              <img src="/images/living.svg" alt="" />
+              <img src="/living.svg" alt="" />
               <h5>Living</h5>
             </div>
             <div>
-              <img src="/images/bedroom.svg" alt="" />
+              <img src="/bedroom.svg" alt="" />
               <h5>Bedroom</h5>
             </div>
           </div>
@@ -291,7 +293,7 @@ function HomePage() {
                                 image: product.image
                               });
                             }}>Add to cart</button>
-                            <img src="/images/link.svg" alt="" />
+                            <img src="/link.svg" alt="" />
                           </div>
                           <h4>{product.name}</h4>
                           <p>{product.description}</p>
@@ -324,7 +326,7 @@ function HomePage() {
                                 image: product.image
                               });
                             }}>Add to cart</button>
-                            <img src="/images/link.svg" alt="" />
+                            <img src="/link.svg" alt="" />
                           </div>
                           <h4>{product.name}</h4>
                           <p>{product.description}</p>
@@ -359,7 +361,7 @@ function HomePage() {
         <div className='pictures_of_rooms'>
 
           <div className='first_picture'>
-            <img src="/images/bed_room.svg" alt="" />
+            <img src="/bed_room.svg" alt="" />
 
               <div className='recomandation'>
 
@@ -367,11 +369,11 @@ function HomePage() {
                   <p>01 - Bed Room</p>
                   <h4>Inner Peace</h4>
                 </div>
-                  <button><img src="/images/arrow.svg" alt="" /></button>
+                  <button><img src="/arrow.svg" alt="" /></button>
               </div>
           </div>
           <div>
-            <img src="/images/chairs.svg" alt="" />
+            <img src="/chairs.svg" alt="" />
             <div className='all_rounds'>
               <div className='biggest_round'>
                 <div className="in_the_round"></div>
@@ -382,7 +384,7 @@ function HomePage() {
             </div>
           </div>
           <div className='small_pictures'>
-            <img src="/images/smallimg.svg" alt="" />
+            <img src="/smallimg.svg" alt="" />
           </div>
         </div>
       </div>
@@ -399,27 +401,27 @@ function HomePage() {
 
         <div className='left_images'>
           <div className='books_and_laptop'>
-            <img src="/images/books.svg" alt="" />
-            <img src="/images/laptop.svg" alt="" />
+            <img src="/books.svg" alt="" />
+            <img src="/laptop.svg" alt="" />
           </div>
           <div className='knight_and_tables'>
-            <img src="/images/knight.svg" alt="" />
-            <img src="/images/tables.svg" alt="" />
+            <img src="/knight.svg" alt="" />
+            <img src="/tables.svg" alt="" />
           </div>
         </div>
 
         <div className='center_images'>
-          <img src="/images/kitchen.svg" alt="" />
+          <img src="/kitchen.svg" alt="" />
         </div>
 
         <div className='right_images'>
           <div className='bed_and_kitchen'>
-            <img src="/images/beds.svg" alt="" />
-            <img src="/images/another_kitchen.svg" alt="" />
+            <img src="/beds.svg" alt="" />
+            <img src="/another_kitchen.svg" alt="" />
           </div>
           <div className='vase_and_wall'>
-            <img src="/images/vase.svg" alt="" />
-            <img src="/images/wall.svg" alt="" />
+            <img src="/vase.svg" alt="" />
+            <img src="/wall.svg" alt="" />
           </div>
         </div>
       </div>

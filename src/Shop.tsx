@@ -13,7 +13,7 @@ const Logo: React.FC = () => {
   return location.pathname !== "/" ? (
     <nav className="nav">
       <Link to="/">
-        <img src="/images/Logo.svg" alt="Funiro Logo" />
+        <img src="./images/Logo.svg" alt="Funiro Logo" />
       </Link>
     </nav>
   ) : null;
@@ -202,7 +202,7 @@ const Shop: React.FC = () => {
         <div className="container">
           <div className="hero_title">
             <h2>Shop</h2>
-            <h5>Home <img src="//images/vector.svg" alt="Breadcrumb" /> Shop</h5>
+            <h5>Home <img src="/images/vector.svg" alt="Breadcrumb" /> Shop</h5>
           </div>
         </div>
       </section>
